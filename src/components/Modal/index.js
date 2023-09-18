@@ -12,9 +12,6 @@ const Modal = ({ isOpen, onClose, selectedItem }) => {
   const { ...infos } = selectedItem; 
 
   const infosArray = Object.values(infos);
-  
-  console.log(infosArray)
-
   return (
     <Overlay>
       <Container>
@@ -38,8 +35,8 @@ const Modal = ({ isOpen, onClose, selectedItem }) => {
 export { Modal }
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired, // Indica se o modal está aberto ou fechado
-  onClose: PropTypes.func.isRequired, // Função para fechar o modal
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 const Overlay = styled.div`

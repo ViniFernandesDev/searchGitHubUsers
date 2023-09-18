@@ -6,13 +6,13 @@ import { UserListItem } from "./UserListItem";
 
 const ContentUser = ({userData, setViewProjects, viewProjects, error}) => {
 
-if(error) {
-    return <TextComponent as='h2' color='red' variant='small'>{error}</TextComponent>;
-}
+  if(error) {
+      return <TextComponent as='h2' color='red' variant='small'>{error}</TextComponent>;
+  }
 
-if (!userData) {
-return <TextComponent as='h2' variant='medium'>Nothing here, search for a user</TextComponent>;
-}
+  if (!userData) {
+  return <TextComponent as='h2' variant='medium'>Nothing here, search for a user</TextComponent>;
+  }
 
   return (
     <Content>
