@@ -9,7 +9,7 @@ export default function Header() {
       <Logo src={logo} alt="Logo UserHunt" />
 
       <NavBar>
-        <NavLink to='/home' activeClassName="active">Search</NavLink>
+        <NavLink to='/' activeClassName="active">Search</NavLink>
         <NavLink to='/historic' activeClassName="active">Historic</NavLink>
       </NavBar>
     </Container>

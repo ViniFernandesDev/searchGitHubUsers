@@ -19,13 +19,13 @@ export default function Historic() {
 
   const handleSearchAgainAndNavigate = (value) => {
     setSearchValue(value);
-    navigate('/home');
+    navigate('/');
   };
 
   const handleClearHistory = () => {
     localStorage.removeItem('searches');
     setSearches([]);
-    navigate('/home');
+    navigate('/');
   };
 
   return (
