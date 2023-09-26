@@ -9,12 +9,12 @@ import { Button } from "../../components/Button/Button";
 
 export default function Historic() {
   const { setSearchValue } = useSearch();
-  const [searches, setSearches] = useState([]);
+  const [searchHistoric, setHistoric] = useState([]);
   const navigate = useNavigate(); 
 
   useEffect(() => {
     const storedSearches = JSON.parse(localStorage.getItem('searches')) || [];
-    setSearches(storedSearches.reverse());
+    setHistoric(storedSearches.reverse());
   }, []);
 
   const handleSearchAgainAndNavigate = (value) => {
@@ -24,7 +24,7 @@ export default function Historic() {
 
   const handleClearHistory = () => {
     localStorage.removeItem('searches');
-    setSearches([]);
+    setHistoric([]);
     navigate('/');
   };
 
@@ -35,7 +35,7 @@ export default function Historic() {
           Historic Searches
         </Title>
 
-        {searches.length > 0 ? (
+        {searchHistoric.length > 0 ? (
           <Clear onClick={handleClearHistory}>
             Clear Historic
           </Clear>
@@ -46,7 +46,7 @@ export default function Historic() {
       </Infos>
 
       <ListHistoric>
-        {searches?.map((searchValue, index) => (
+        {searchHistoric?.map((searchValue, index) => (
           <Item key={index}>
             {searchValue}
             <SearchAgain onClick={() => handleSearchAgainAndNavigate(searchValue)}>
